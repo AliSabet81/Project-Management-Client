@@ -66,7 +66,20 @@ export const api = createApi({
   }),
   reducerPath: "api",
   tagTypes: ["Projects", "Tasks", "Users", "Teams"],
-  endpoints: (build) => ({}),
+  endpoints: (build) => ({
+    getProjects: build.query<Project[], void>({
+      query: () => "projects",
+      providesTags: ["Projects"],
+    }),
+    createProject: build.mutation<Project, Partial<Project>>({
+      query: (project) => ({
+        url: "projects",
+        method: "POST",
+        body: project,
+      }),
+      invalidatesTags: ["Projects"],
+    }),
+  }),
 });
 
-export const {} = api;
+export const { useGetProjectsQuery, useCreateProjectMutation } = api;
