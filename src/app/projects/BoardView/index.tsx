@@ -166,7 +166,7 @@ const Task = ({ task }: TaskProps) => {
         drag(instance);
       }}
       className={`mb-4 rounded-md bg-white shadow dark:bg-dark-secondary ${
-        isDragging ? "opacity-50" : "opacity-100"
+        isDragging ? "cursor-grabbing opacity-50" : "cursor-grab opacity-100"
       }`}
     >
       {task.attachments && task.attachments.length > 0 && (
