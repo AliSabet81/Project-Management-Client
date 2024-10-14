@@ -144,7 +144,7 @@ const Task = ({ task }: TaskProps) => {
 
   const PriorityTag = ({ priority }: { priority: TaskType["priority"] }) => (
     <div
-      className={`cursor-move rounded-full px-2 py-1 text-xs font-semibold ${
+      className={`rounded-full px-2 py-1 text-xs font-semibold ${
         priority === "Urgent"
           ? "bg-red-200 text-red-700"
           : priority === "High"
